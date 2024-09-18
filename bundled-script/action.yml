@@ -7,4 +7,11 @@ runs:
     - shell: bash
       run: |
         echo "running script.sh"
-        script.sh
+
+        base_dir=$(dirname "${BASH_SOURCE[0]}")
+
+        echo "base_dir=$base_dir"
+        echo "contents of $base_dir:"
+        ls -Al "$base_dir"
+
+        bash "$base_dir"/script.sh
