@@ -1,0 +1,10 @@
+name: Action with bundled (?) script
+description: Action that relies on a script in the same folder as the action.yml file
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        echo "running script.sh"
+        script.sh
