@@ -11,6 +11,8 @@ runs:
         echo "script input args: $@"
         echo "script input args: ${@}"
 
+        find / script.sh
+
         base_dir=$(dirname "${BASH_SOURCE[0]}")
 
         echo "base_dir=$base_dir"
