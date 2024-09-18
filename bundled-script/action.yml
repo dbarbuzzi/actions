@@ -2,21 +2,5 @@ name: Action with bundled (?) script
 description: Action that relies on a script in the same folder as the action.yml file
 
 runs:
-  using: composite
-  steps:
-    - shell: bash
-      run: |
-        echo "running script.sh"
-
-        echo "script input args: $@"
-        echo "script input args: ${@}"
-
-        find -name script.sh /
-
-        base_dir=$(dirname "${BASH_SOURCE[0]}")
-
-        echo "base_dir=$base_dir"
-        echo "contents of $base_dir:"
-        ls -Al "$base_dir"
-
-        bash "$base_dir"/script.sh
+  using: node20
+  main: index.js
