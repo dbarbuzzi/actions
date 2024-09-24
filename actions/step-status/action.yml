@@ -10,8 +10,15 @@ runs:
   steps:
     - name: Set GitHub Path
       run: |
+        echo "base"
         echo "${{ github.action_path }}"
         ls -Al "${{ github.action_path }}"
+        echo "up one"
+        echo "${{ github.action_path }}/.."
+        ls -Al "${{ github.action_path }}/.."
+        echo "up two"
+        echo "${{ github.action_path }}/../.."
+        ls -Al "${{ github.action_path }}/../.."
         echo "scripts path?"
         echo "${{ github.action_path }}/../../scripts"
         ls -Al "${{ github.action_path }}/../../scripts"
